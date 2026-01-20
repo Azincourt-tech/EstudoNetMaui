@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudoNetMaui.FlyoutPageDemo"
+             FlyoutLayoutBehavior="Popover"
+             Title="FlyoutPageDemo">
+    
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu">
+            <StackLayout>
+                <Label Text="Menu Item 1" 
+                           FontSize="Large"
+                           Margin="20"
+                           BackgroundColor="Aqua"/>
+                <Label Text="Menu Item 2" 
+                           FontSize="Large"
+                           Margin="20"
+                           BackgroundColor="Brown"/>
+                <Label Text="Menu Item 3" 
+                           FontSize="Large"
+                           Margin="20"
+                           BackgroundColor="Crimson"/>
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <ContentPage Title="Detail Page">
+                    <StackLayout>
+                        <Label Text="Welcome to the Detail Page!" 
+                                   FontSize="Large"
+                                   VerticalOptions="CenterAndExpand" 
+                                   HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+    
+</FlyoutPage>
