@@ -2,9 +2,9 @@ using System.Threading.Tasks;
 
 namespace EstudoNetMaui;
 
-public partial class MinhaSegundaPagina : ContentPage
+public partial class NavigationPageDemo : ContentPage
 {
-	public MinhaSegundaPagina()
+	public NavigationPageDemo()
 	{
 		InitializeComponent();
 	}
