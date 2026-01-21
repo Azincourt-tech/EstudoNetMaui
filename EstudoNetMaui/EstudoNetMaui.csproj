@@ -57,10 +57,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Controls\Command\MauiCommandoControls.xaml.cs" />
 	  <Compile Remove="NewPage1.xaml.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="Controls\Command\MauiCommandoControls.xaml" />
 	  <MauiXaml Remove="NewPage1.xaml" />
 	</ItemGroup>
 
@@ -70,22 +72,49 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="TabbedPageDemo.xaml.cs">
+	  <Compile Update="PagesTypes\NavigationPageDemo.xaml.cs">
+	    <DependentUpon>NavigationPageDemo.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="PagesTypes\TabbedPageDemo.xaml.cs">
 	    <DependentUpon>TabbedPageDemo.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="FlyoutPageDemo.xaml">
+	  <MauiXaml Update="Controls\Command\MauiCommandControls.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MinhaSegundaPagina.xaml">
+	  <MauiXaml Update="Controls\Presentation\MauiPresentationControls.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="StackLayoutDemo.xaml">
+	  <MauiXaml Update="LayoutsTypes\Absolute\AbsoluteLayoutDemo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="TabbedPageDemo.xaml">
+	  <MauiXaml Update="LayoutsTypes\Absolute\AbsoluteLayoutDemo2.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LayoutsTypes\Flex\FlexLayoutDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LayoutsTypes\Flex\FlexLayoutDemo2.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LayoutsTypes\Grid\GridLayoutDemo2.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PagesTypes\FlyoutPageDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LayoutsTypes\Grid\GridLayoutDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PagesTypes\NavigationPageDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LayoutsTypes\Stack\StackLayoutDemo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PagesTypes\TabbedPageDemo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

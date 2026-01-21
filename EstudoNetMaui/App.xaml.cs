@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using EstudoNetMaui.Controls.Command;
+using EstudoNetMaui.Controls.Presentation;
 
 namespace EstudoNetMaui
 {
@@ -11,7 +12,7 @@ namespace EstudoNetMaui
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new StackLayoutDemo());
+            return new Window(new NavigationPage(new MauiCommandControls()));
         }
     }
 }
