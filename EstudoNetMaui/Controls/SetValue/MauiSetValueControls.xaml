@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudoNetMaui.Controls.SetValue.MauiSetValueControls"
+             Title="Maui Set Value Controls">
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <!--CheckBox-->
+            <StackLayout Padding="20">
+                <Label 
+                    Text="Aceito os termos e condições"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <CheckBox 
+                    x:Name="chkTerms"
+                    IsChecked="False"
+                    CheckedChanged="chkTerms_CheckedChanged"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!--Divider-->
+            <Label BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+
+            <!--Slider-->
+            <StackLayout Padding="20">
+                <Label 
+                    Text="Ajuste o volume:"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <Slider 
+                    x:Name="sldVolume"
+                    Minimum="0"
+                    Maximum="100"
+                    ValueChanged="sldVolume_ValueChanged"
+                    HorizontalOptions="Fill"/>
+                <Label 
+                    x:Name="lblVolume"
+                    Text="Volume: 0"
+                    FontSize="Small"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!--Divider-->
+            <Label BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+
+            <!--Estepper-->
+            <StackLayout Padding="20">
+                <Label 
+                    Text="Selecione a quantidade:"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <Stepper 
+                    x:Name="stpQuantity"
+                    Minimum="0"
+                    Maximum="10"
+                    Increment="1"
+                    ValueChanged="stpQuantity_ValueChanged"
+                    HorizontalOptions="Center"/>
+                <Label 
+                    x:Name="lblQuantity"
+                    Text="Quantidade: 0"
+                    FontSize="Small"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!--Divider-->
+            <Label BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+
+            <!--Switch-->
+            <StackLayout Padding="20">
+                <Label 
+                    Text="Ativar notificações"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <Switch 
+                    x:Name="swcNotifications"
+                    IsToggled="False"
+                    Toggled="swcNotifications_Toggled"
+                    HorizontalOptions="Center"/>
+                <Label
+                    x:Name="lblNotifications"
+                    Text="Notificações Desativadas"
+                    FontSize="Small"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!--Divider-->
+            <Label BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+
+            <!--DatePicker-->
+            <StackLayout Padding="20">
+                <Label 
+                    Text="Selecione uma data:"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <DatePicker 
+                    x:Name="dtpDate"
+                    MinimumDate="2000-01-01"
+                    Format="dd/MM/yyyy"
+                    DateSelected="dtpDate_DateSelected"
+                    HorizontalOptions="Center"/>
+                <Label 
+                    x:Name="lblDate"
+                    Text="Data selecionada:"
+                    FontSize="Small"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!--TimePicker-->
+            <StackLayout Padding="20">
+                <Label 
+                    Text="Selecione um horário:"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <TimePicker 
+                    x:Name="tmpTime"
+                    Format="HH:mm"
+                    TimeSelected="tmpTime_TimeSelected"
+                    HorizontalOptions="Center"/>
+                <Label 
+                    x:Name="lblTime"
+                    Text="Horário selecionado:"
+                    FontSize="Small"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!--Divider-->
+            <Label BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
