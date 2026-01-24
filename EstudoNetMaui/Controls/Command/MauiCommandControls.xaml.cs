@@ -36,4 +36,19 @@ public partial class MauiCommandControls : ContentPage
 
         lblSearchResult.Text = $"Você pesquisou por: {searchBar.Text}";
     }
+
+    private async void OnDeleteSwipeItem_Invoked(object sender, EventArgs e)
+    {
+        await DisplayAlertAsync("SwipeItem", "Item deletado com sucesso!", "OK");
+    }
+
+    private async void OnEditSwipeItem_Invoked(object sender, EventArgs e)
+    {
+        await DisplayAlertAsync("SwipeItem", "Item editado com sucesso!", "OK");
+    }
+
+    private async void OnShareSwipeItem_Invoked(object sender, EventArgs e)
+    {
+        await DisplayAlertAsync("SwipeItem", "Item compartilhado com sucesso!", "OK");
+    }
 }

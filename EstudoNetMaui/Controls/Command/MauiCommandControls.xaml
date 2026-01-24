@@ -103,6 +103,51 @@
             TextColor="DarkRed"
             VerticalOptions="Center"
             HorizontalOptions="Center"/>
+        
+        <!--Divider-->
+        <Label BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+        
+     <!--SwipeView-->
+        <SwipeView>
+            <SwipeView.LeftItems>
+                <SwipeItems Mode="Reveal">
+                    <SwipeItem 
+                        Text="Excluir" 
+                        BackgroundColor="Red" 
+                        IconImageSource="trash.svg"
+                        Invoked="OnDeleteSwipeItem_Invoked"/>
+
+                    <SwipeItem 
+                        Text="Editar" 
+                        BackgroundColor="Blue" 
+                        IconImageSource="circle_plus.svg"
+                        Invoked="OnEditSwipeItem_Invoked"/>
+                </SwipeItems>
+            </SwipeView.LeftItems>
+
+            <SwipeView.RightItems>
+                <SwipeItems Mode="Reveal">
+                    <SwipeItem 
+                        Text="Compartilhar" 
+                        BackgroundColor="Green" 
+                        IconImageSource="settings.svg"
+                        Invoked="OnShareSwipeItem_Invoked"/>
+                </SwipeItems>
+            </SwipeView.RightItems>
+
+            <Grid 
+                HeightRequest="50" 
+                BackgroundColor="LightYellow"
+                VerticalOptions="Center"
+                HorizontalOptions="Fill">
+                <Label 
+                    Text="&lt;== Deslizar ==&gt;"
+                    FontSize="Medium"
+                    TextColor="Black"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </Grid>
+        </SwipeView>
 
     </VerticalStackLayout>
     
