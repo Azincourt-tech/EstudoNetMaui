@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudoNetMaui.Controls.Collections.ListViewDemo"
+             Title="ListView">
+    
+    <ScrollView>
+        <!--ListView Deprecated-->
+        <VerticalStackLayout Padding="20">
+            <Label 
+                Text="Lista de Itens:"
+                FontSize="Medium"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+            <ListView 
+                x:Name="listViewItems"
+                ItemsSource="{Binding Fotos}"
+                SeparatorColor="Gray">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--Deprecated-->
+                        <ImageCell
+                            Text="{Binding Nome}"
+                            ImageSource="{Binding ImagemUrl}" 
+                            TextColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudoNetMaui.Controls.Collections.CollectionViewDemo"
+             Title="CollectionViewDemo">
+
+    <ScrollView>
+        <!--CollectionView-->
+        <VerticalStackLayout Padding="20">
+            <Label 
+                Text="Coleção de Itens:"
+                FontSize="Medium"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+            
+            <CollectionView 
+                x:Name="collectionViewItems"
+                ItemsSource="{Binding Fotos}"
+                SelectionMode="Single"
+                SelectionChanged="collectionViewItems_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout 
+                        Orientation="Vertical" 
+                        Span="2"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border 
+                            StrokeThickness="2" 
+                            StrokeShape="RoundRectangle 10,10,10,10"
+                            Stroke="Gray"
+                            Margin="5">
+                            <StackLayout Margin="10">
+                                <Image 
+                                    Source="{Binding ImagemUrl}" 
+                                    Aspect="AspectFill" 
+                                    HeightRequest="100" 
+                                    WidthRequest="100"/>
+                                <Label 
+                                    Text="{Binding Nome}" 
+                                    FontSize="Small" 
+                                    HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
