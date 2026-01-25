@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace EstudoNetMaui.Models
 {
@@ -11,6 +8,9 @@ namespace EstudoNetMaui.Models
         private string nome;
         private decimal preco;
         private int estoque;
+        private bool ativo;
+        private DateTime dataCompra;
+        private double peso;
 
         public string Nome
         {
@@ -37,6 +37,33 @@ namespace EstudoNetMaui.Models
             set
             {
                 estoque = value;
+                OnPropertyChanged();
+            }
+        }
+        public bool Ativo
+        {
+            get => ativo;
+            set
+            {
+                ativo = value;
+                OnPropertyChanged();
+            }
+        }
+        public DateTime DataCompra
+        {
+            get => dataCompra;
+            set
+            {
+                dataCompra = value;
+                OnPropertyChanged();
+            }
+        }
+        public double Peso
+        {
+            get => peso;
+            set
+            {
+                peso = value;
                 OnPropertyChanged();
             }
         }

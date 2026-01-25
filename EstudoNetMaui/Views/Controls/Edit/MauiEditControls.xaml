@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudoNetMaui.Views.Controls.Edit.MauiEditControls"
+             Title="Maui Edit Controls">
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <!--Entry-->
+            <StackLayout Padding="20">
+                <Label 
+                    Text="Digite seu nome:"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+
+                <Entry 
+                    HorizontalOptions="Fill"
+                    x:Name="entryName"
+                    Placeholder="Seu nome aqui"
+                    PlaceholderColor="Gray"
+                    IsReadOnly="False"
+                    MaxLength="20"
+                    IsPassword="False"
+                    Keyboard="Text"
+                    ClearButtonVisibility="WhileEditing"
+                    ReturnType="Search"
+                    TextChanged="entryName_TextChanged"
+                    Completed="entryName_Completed"/>
+
+                <Label
+                    x:Name="lblNameResult"
+                    Text=""
+                    FontSize="Small"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!--Divider-->
+            <Label BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+
+            <!--Editor-->
+            <StackLayout Padding="20">
+                <Label 
+                    Text="Digite sua mensagem:"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+
+                <Editor 
+                    x:Name="editorMessage"
+                    Placeholder="Sua mensagem aqui"
+                    TextChanged="editorMessage_TextChanged"
+                    Completed="editorMessage_Completed"
+                    AutoSize="TextChanges"
+                    HorizontalOptions="Fill"/>
+
+                <Label
+                    x:Name="lblMessageResult"
+                    Text=""
+                    FontSize="Small"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!--Divider-->
+            <Label BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+
+            <!--ActivityIndicator-->
+            <StackLayout Padding="20">
+                <Label 
+                    Text="Carregando dados..."
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+
+                <ActivityIndicator 
+                    x:Name="activityIndicatorDemo"
+                    IsRunning="True"
+                    Color="Blue"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!--Divider-->
+            <Label BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="Fill" VerticalOptions="Center"/>
+
+
+            <!--ProgressBar-->
+            <StackLayout Padding="20">
+                <Label 
+                    Text="Progresso do carregamento:"
+                    FontSize="Medium"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+
+                <ProgressBar 
+                    x:Name="progressBarDemo"
+                    Progress="0.1"
+                    ProgressColor="Red"
+                    HeightRequest="30"/>
+
+                <Button 
+                    Text="Aumentar Progresso"
+                    Clicked="Button_Clicked"
+                    Margin="0,10,0,0"/>
+
+                <Button 
+                    Text="Redefinir Progresso"
+                    Clicked="Button_Reset_Clicked"
+                    Margin="0,10,0,0"/>
+
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

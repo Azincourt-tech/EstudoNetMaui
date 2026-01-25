@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudoNetMaui.Views.ProdutoView"
+             Title="ProdutoView">
+
+    <VerticalStackLayout Spacing="20">
+        <Label Text="Nome:" FontSize="30"/>
+        <Entry Text="{Binding Produto.Nome}"
+              FontSize="20"/>
+
+        <Label Text="Preço:" FontSize="30"/>
+        <Entry Text="{Binding Produto.Preco, 
+              StringFormat='R$ {0:F2}'}" 
+              FontSize="20"/>
+
+        <Label Text="Estoque:" FontSize="30"/>
+        <Entry Text="{Binding Path=Produto.Estoque, 
+              StringFormat='Quantidade: {0}'}" 
+              FontSize="20"/>
+
+        <Label Text="Ativo:" FontSize="30"/>
+        <Switch IsToggled="{Binding Produto.Ativo}" 
+                HorizontalOptions="Start"/>
+
+        <Label Text="Data de Compra:" FontSize="30"/>
+        <DatePicker Date="{Binding Produto.DateCompra}"
+                    FontSize="20"/>
+
+        <Label Text="Peso (kg):" FontSize="30"/>
+        <Entry Text="{Binding Path=Produto.Peso, 
+              StringFormat='0:{F1}'}" 
+              FontSize="20"/>
+    </VerticalStackLayout>
+    
+</ContentPage>
