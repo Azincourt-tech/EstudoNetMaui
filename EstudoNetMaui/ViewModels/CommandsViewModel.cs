@@ -1,23 +1,23 @@
-﻿using System.Windows.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace EstudoNetMaui.ViewModels
 {
-    public class CommandsViewModel
+    public partial class CommandsViewModel : ObservableObject
     {
-        public ICommand ButtonClickCommand { get; }
-        public ICommand SearchCommand { get; }
-        public string? SearchTerm { get; set; }
+        [ObservableProperty]
+        private string? searchTerm;
 
-        public CommandsViewModel()
+        [RelayCommand]
+        private async Task ButtonClick()
         {
-            ButtonClickCommand = new Command(() =>
-               App.Current.MainPage.DisplayAlertAsync("Alerta", "Mensagem", "Ok"));
+            await App.Current.MainPage.DisplayAlertAsync("Alerta", "Mensagem", "Ok");
+        }
 
-            SearchCommand = new Command((searchText) =>
-            {
-                var texto = searchText;
-                Alerta(texto.ToString());
-            });
+        [RelayCommand]
+        private void Search(string searchText)
+        {
+            Alerta(searchText);
         }
 
         private void Alerta(string mensagem)

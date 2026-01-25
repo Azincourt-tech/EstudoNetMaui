@@ -1,39 +1,13 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace EstudoNetMaui.Models
 {
-    public class Time : INotifyPropertyChanged
+    public partial class Time : ObservableObject
     {
+        [ObservableProperty]
         private string nome;
+
+        [ObservableProperty]
         private string escudo;
-
-        public string Nome
-        {
-            get => nome;
-            set
-            {
-                nome = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Escudo
-        {
-            get => escudo;
-            set
-            {
-                escudo = value;
-                OnPropertyChanged();
-            }
-
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName]
-          string propName = null)
-        {
-            PropertyChanged?.Invoke(this,
-                new PropertyChangedEventArgs(propName));
-        }
     }
 }

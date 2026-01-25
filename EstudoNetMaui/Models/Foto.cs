@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EstudoNetMaui.Models
+﻿namespace EstudoNetMaui.Models
 {
     public class Foto
     {

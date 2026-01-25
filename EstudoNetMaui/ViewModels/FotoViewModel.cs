@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using EstudoNetMaui.Models;
+using System.Collections.ObjectModel;
 
 namespace EstudoNetMaui.ViewModels
 {
-    public class FotoViewModel
+    public partial class FotoViewModel : ObservableObject
     {
-        public ObservableCollection<Foto> fotos { get; private set; }
-        public ObservableCollection<Foto> Fotos
-        {
-            get { return fotos; }
-            set { fotos = value; }
-        }
+        [ObservableProperty]
+        private ObservableCollection<Foto> fotos;
 
-        public FotoViewModel() 
-        { 
+        public FotoViewModel()
+        {
             Fotos = new ObservableCollection<Foto>
             {
                 new Foto { Nome = "Foto 1", ImagemUrl = "https://picsum.photos/id/237/200/300" },

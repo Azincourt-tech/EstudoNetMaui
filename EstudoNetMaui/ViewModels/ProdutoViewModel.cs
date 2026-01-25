@@ -1,13 +1,13 @@
-﻿using EstudoNetMaui.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using EstudoNetMaui.Models;
 
 namespace EstudoNetMaui.ViewModels
 {
-    public class ProdutoViewModel
+    public partial class ProdutoViewModel : ObservableObject
     {
-        public Produto Produto { get; set; }
+        [ObservableProperty]
+        private Produto produto;
+
         public ProdutoViewModel()
         {
             Produto = new Produto

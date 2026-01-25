@@ -1,79 +1,25 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace EstudoNetMaui.Models
 {
-    public class Produto : INotifyPropertyChanged
+    public partial class Produto : ObservableObject
     {
+        [ObservableProperty]
         private string nome;
+
+        [ObservableProperty]
         private decimal preco;
+
+        [ObservableProperty]
         private int estoque;
+
+        [ObservableProperty]
         private bool ativo;
+
+        [ObservableProperty]
         private DateTime dataCompra;
+
+        [ObservableProperty]
         private double peso;
-
-        public string Nome
-        {
-            get => nome;
-            set
-            {
-                nome = value;
-                OnPropertyChanged();
-            }
-        }
-        public decimal Preco
-        {
-            get => preco;
-            set
-            {
-                preco = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public int Estoque
-        {
-            get => estoque;
-            set
-            {
-                estoque = value;
-                OnPropertyChanged();
-            }
-        }
-        public bool Ativo
-        {
-            get => ativo;
-            set
-            {
-                ativo = value;
-                OnPropertyChanged();
-            }
-        }
-        public DateTime DataCompra
-        {
-            get => dataCompra;
-            set
-            {
-                dataCompra = value;
-                OnPropertyChanged();
-            }
-        }
-        public double Peso
-        {
-            get => peso;
-            set
-            {
-                peso = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName]
-          string propName = null)
-        {
-            PropertyChanged?.Invoke(this,
-                new PropertyChangedEventArgs(propName));
-        }
     }
 }

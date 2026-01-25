@@ -1,40 +1,18 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Input;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace EstudoNetMaui.ViewModels
 {
-    public class SaudacaoViewModel : INotifyPropertyChanged
+    public partial class SaudacaoViewModel : ObservableObject
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
+        [ObservableProperty]
+        private string nome = string.Empty;
 
-        public void Notificar([CallerMemberName] string prop = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
-
-        public string Nome { get; set; } = string.Empty;
-
+        [ObservableProperty]
         private string _mensagem;
 
-        public string Mensagem
-        {
-            get { return _mensagem; }
-            set
-            {
-                _mensagem = value;
-                Notificar();
-            }
-
-        }
-
-        public ICommand SaudacaoCommand { get; private set; }
-
-        public SaudacaoViewModel()
-        {
-            SaudacaoCommand = new Command(SaudacaoCmd);
-        }
-        void SaudacaoCmd()
+        [RelayCommand]
+        private void Saudacao()
         {
             Mensagem = $"Bem-Vindo {Nome}";
         }

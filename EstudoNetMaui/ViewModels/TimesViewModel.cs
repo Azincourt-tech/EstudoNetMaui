@@ -1,10 +1,12 @@
-﻿using EstudoNetMaui.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using EstudoNetMaui.Models;
 
 namespace EstudoNetMaui.ViewModels
 {
-    public class TimesViewModel
+    public partial class TimesViewModel : ObservableObject
     {
-        public List<Time> Times { get; set; } = new List<Time>();
+        [ObservableProperty]
+        private List<Time> times;
 
         public TimesViewModel()
         {
