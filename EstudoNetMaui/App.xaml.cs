@@ -1,5 +1,4 @@
-﻿using EstudoNetMaui.Controls.Command;
-using EstudoNetMaui.Controls.Presentation;
+﻿using EstudoNetMaui.Views;
 
 namespace EstudoNetMaui
 {
@@ -12,7 +11,7 @@ namespace EstudoNetMaui
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new NavigationPage(new MauiCommandControls()));
+            return new Window(new NavigationPage(new EnderecoView()));
         }
     }
 }

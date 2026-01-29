@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudoNetMaui.Views.CommandsView"
+             Title="CommandsView">
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="Exemplo de Command em .NET MAUI"
+            FontSize="20"
+            HorizontalOptions="Center"
+            Margin="0,20,0,20"/>
+
+        <Button
+            x:Name="btnAlerta"
+            Text="Exibir Alerta"
+            FontSize="20"
+            Command="{Binding ButtonClickCommand}"
+            HorizontalOptions="Center"/>
+
+        <Label
+            Margin="0,40,0,10"
+            Text="SearchBar - Passando parâmetros"
+            FontSize="18"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+
+        <SearchBar
+            x:Name="searchBar"
+            Placeholder="Digite algo para buscar"
+            FontSize="18"
+            SearchCommand="{Binding SearchCommand}"
+            SearchCommandParameter="{Binding Path=Text, Source={x:Reference searchBar}}"
+            HorizontalOptions="Center"
+            WidthRequest="300"/>
+        
+    </VerticalStackLayout>
+</ContentPage>
