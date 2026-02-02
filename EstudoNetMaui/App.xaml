@@ -8,6 +8,15 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Styles/ButtonStyles.xaml" />
+                <ResourceDictionary>
+                    <Style TargetType="StackBase"
+                           ApplyToDerivedTypes="True">
+                        <Setter Property="VerticalOptions" Value="Center" />
+                        <Setter Property="Padding" Value="30,0" />
+                        <Setter Property="Spacing" Value="25" />
+                    </Style>
+                </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

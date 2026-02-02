@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstudoNetMaui.Views.StylePage"
+             Title="Style Page">
+    
+    <ContentPage.Resources>
+        <Style x:Key="viewStyle" TargetType="View">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="BackgroundColor" Value="Yellow" />
+        </Style>
+
+        <Style x:Key="labelStyle" TargetType="Label"
+               BasedOn="{StaticResource viewStyle}">
+            <Setter Property="TextColor" Value="Blue" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="cyanStyle">
+            <Setter Property="BackgroundColor" Value="DarkCyan" />
+        </Style>
+
+        <Style Class="ButtonText" TargetType="Button">
+            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style Class="LightButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="LightGray" />
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+
+        <Style Class="DarkButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Black" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Style="{StaticResource viewStyle}">
+        <Label Text="Label 1"  Style="{StaticResource labelStyle}" />
+        <Label Text="Label 2"  Style="{StaticResource labelStyle}" />
+        <Label Text="Usando herança de estilo" Style="{StaticResource labelStyle}" />
+
+        <Button Text="LOGIN" />
+        <Button Text="LOGOUT" />
+
+        <Button Text="Clique para atualizar" Style="{DynamicResource dynamicStyle}" />
+
+        <Button Text="Alterar estilo" Clicked="Button_Clicked" />
+
+        <Button StyleClass="ButtonText, DarkButton" Text="Botão Escuro com Texto Grande" />
+        <Button StyleClass="ButtonText, LightButton" Text="Botão Claro com Texto Grande" />
+
+    </VerticalStackLayout>
+</ContentPage>

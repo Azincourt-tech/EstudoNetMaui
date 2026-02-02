@@ -11,7 +11,7 @@ namespace EstudoNetMaui
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new NavigationPage(new EnderecoView()));
+            return new Window(new NavigationPage(new StylePage()));
         }
     }
 }
